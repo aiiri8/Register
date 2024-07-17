@@ -1,0 +1,16 @@
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\bin\Debug\net8.0\ElectronicRecyclingSystem.Database.deps.json
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\bin\Debug\net8.0\ElectronicRecyclingSystem.Database.runtimeconfig.json
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\bin\Debug\net8.0\ElectronicRecyclingSystem.Database.dll
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\bin\Debug\net8.0\ElectronicRecyclingSystem.Database.pdb
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\bin\Debug\net8.0\ElectronicRecyclingSystem.Database.xml
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ElectronicRecyclingSystem.Database.csproj.AssemblyReference.cache
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ElectronicRecyclingSystem.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ElectronicRecyclingSystem.Database.AssemblyInfoInputs.cache
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ElectronicRecyclingSystem.Database.AssemblyInfo.cs
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ElectronicRecyclingSystem.Database.csproj.CoreCompileInputs.cache
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ElectronicRecyclingSystem.Database.dll
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\refint\ElectronicRecyclingSystem.Database.dll
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ElectronicRecyclingSystem.Database.xml
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ElectronicRecyclingSystem.Database.pdb
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ElectronicRecyclingSystem.Database.genruntimeconfig.cache
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Database\obj\Debug\net8.0\ref\ElectronicRecyclingSystem.Database.dll

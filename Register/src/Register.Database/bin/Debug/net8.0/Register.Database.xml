@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Register.Database</name>
+    </assembly>
+    <members>
+        <member name="T:Register.Database.Migrations.UpdateColumsAgain">
+            <inheritdoc />
+        </member>
+        <member name="M:Register.Database.Migrations.UpdateColumsAgain.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Register.Database.Migrations.UpdateColumsAgain.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Register.Database.Migrations.UpdateColumsAgain.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Register.Database.Migrations.UpdateAgain">
+            <inheritdoc />
+        </member>
+        <member name="M:Register.Database.Migrations.UpdateAgain.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Register.Database.Migrations.UpdateAgain.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Register.Database.Migrations.UpdateAgain.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Register.Database.Migrations.CreateNewTables">
+            <inheritdoc />
+        </member>
+        <member name="M:Register.Database.Migrations.CreateNewTables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Register.Database.Migrations.CreateNewTables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Register.Database.Migrations.CreateNewTables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

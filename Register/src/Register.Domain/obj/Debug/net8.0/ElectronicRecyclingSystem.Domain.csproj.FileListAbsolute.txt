@@ -1,0 +1,13 @@
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\bin\Debug\net8.0\ElectronicRecyclingSystem.Domain.deps.json
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\bin\Debug\net8.0\ElectronicRecyclingSystem.Domain.dll
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\bin\Debug\net8.0\ElectronicRecyclingSystem.Domain.pdb
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\bin\Debug\net8.0\ElectronicRecyclingSystem.Domain.xml
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\obj\Debug\net8.0\ElectronicRecyclingSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\obj\Debug\net8.0\ElectronicRecyclingSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\obj\Debug\net8.0\ElectronicRecyclingSystem.Domain.AssemblyInfo.cs
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\obj\Debug\net8.0\ElectronicRecyclingSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\obj\Debug\net8.0\ElectronicRecyclingSystem.Domain.dll
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\obj\Debug\net8.0\refint\ElectronicRecyclingSystem.Domain.dll
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\obj\Debug\net8.0\ElectronicRecyclingSystem.Domain.xml
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\obj\Debug\net8.0\ElectronicRecyclingSystem.Domain.pdb
+C:\Users\mamed\OneDrive\Рабочий стол\ElectronicRecyclingSystem-master\src\ElectronicRecyclingSystem.Domain\obj\Debug\net8.0\ref\ElectronicRecyclingSystem.Domain.dll
