@@ -26,4 +26,7 @@ public interface IRelationshipRepository
         long daysInMonth,
         DateTime endingDate,
         CancellationToken cancellationToken);
+    
+    public Task<ImmutableHashSet<Relationship>> GetActive(
+        CancellationToken cancellationToken);
 }

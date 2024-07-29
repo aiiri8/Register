@@ -11,6 +11,11 @@ public interface IGuardianRepository
     public Task<long> Add(
         AddGuardianQuery command,
         CancellationToken cancellationToken);
+
+    public Task<long> Update(
+        long id,
+        AddGuardianQuery command,
+        CancellationToken cancellationToken);
     
     Task<Guardian> Get(
         long id,
@@ -19,5 +24,9 @@ public interface IGuardianRepository
     Task<ImmutableHashSet<Guardian>> Get(
         int skip,
         int take,
+        CancellationToken cancellationToken);
+    
+    Task<ImmutableHashSet<Guardian>> Get(
+        string query,
         CancellationToken cancellationToken);
 }

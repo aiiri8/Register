@@ -48,6 +48,15 @@ public class GuardianController(IGuardianService guardianService) : ControllerBa
         return result.MapToResponse();
     }
     
+    [HttpPut("search")]
+    public async Task<GetGuardiansResponse> GetGuardians(
+        [FromBody] string request,
+        CancellationToken cancellationToken)
+    {
+        var result = await _guardianService.GetGuardiansAsync(request, cancellationToken);
+        return result.MapToResponse();
+    }
+    
     [HttpPut("{id:long}")]
     public async Task<IActionResult> UpdateGuardian(
         [FromRoute] long id,
@@ -55,7 +64,7 @@ public class GuardianController(IGuardianService guardianService) : ControllerBa
         CancellationToken cancellationToken)
     {
         var command = request.MapToModel();
-        var result = await _guardianService.AddGuardianAsync(command, cancellationToken);
+        var result = await _guardianService.UpdateGuardianAsync(id, command, cancellationToken);
         if (result.IsSuccess)
         {
             return Ok(result.Id);

@@ -13,6 +13,11 @@ public interface IGuardianService
     Task<AddGuardianResult> AddGuardianAsync(
         AddGuardianQuery command,
         CancellationToken cancellationToken);
+
+    public Task<AddGuardianResult> UpdateGuardianAsync(
+        long id,
+        AddGuardianQuery command,
+        CancellationToken cancellationToken);
     
     public Task<GetGuardianResult> GetGuardianAsync(
         long id,
@@ -20,5 +25,9 @@ public interface IGuardianService
     
     public Task<GetGuardiansResult> GetGuardiansAsync(
         GetGuardiansQuery query,
+        CancellationToken cancellationToken);
+    
+    public Task<GetGuardiansResult> GetGuardiansAsync(
+        string query,
         CancellationToken cancellationToken);
 }

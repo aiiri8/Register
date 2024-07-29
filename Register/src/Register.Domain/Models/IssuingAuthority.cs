@@ -2,4 +2,5 @@ namespace Register.Domain.Models;
 
 public record IssuingAuthority(
     long? Id,
-    string IssuingAuthorityName);
+    string IssuingAuthorityName,
+    string Code);

@@ -20,6 +20,15 @@ public class GuardianService(IGuardianRepository guardianRepository) : IGuardian
         var result = await _guardianRepository.Add(command, cancellationToken);
         return new AddGuardianResult(result);
     }
+    
+    public async Task<AddGuardianResult> UpdateGuardianAsync(
+        long id,
+        AddGuardianQuery command,
+        CancellationToken cancellationToken)
+    {
+        var result = await _guardianRepository.Update(id, command, cancellationToken);
+        return new AddGuardianResult(result);
+    }
 
     public async Task<GetGuardianResult> GetGuardianAsync(
         long id,
@@ -36,6 +45,14 @@ public class GuardianService(IGuardianRepository guardianRepository) : IGuardian
         var skip = (query.PageNumber - 1) * query.PageSize;
         var take = query.PageSize;
         var result = await _guardianRepository.Get(skip, take, cancellationToken);
+        return new GetGuardiansResult(result);
+    }
+    
+    public async Task<GetGuardiansResult> GetGuardiansAsync(
+        string query,
+        CancellationToken cancellationToken)
+    {
+        var result = await _guardianRepository.Get(query, cancellationToken);
         return new GetGuardiansResult(result);
     }
 }

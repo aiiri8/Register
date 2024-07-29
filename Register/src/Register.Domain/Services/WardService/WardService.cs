@@ -20,6 +20,15 @@ public class WardService(IWardRepository wardRepository) : IWardService
         var result = await _wardRepository.Add(command, cancellationToken);
         return new AddWardResult(result);
     }
+    
+    public async Task<AddWardResult> UpdateWardAsync(
+        long id,
+        Ward command,
+        CancellationToken cancellationToken)
+    {
+        var result = await _wardRepository.Update(id, command, cancellationToken);
+        return new AddWardResult(result);
+    }
 
     public async Task<GetWardResult> GetWardAsync(
         long id,
@@ -36,6 +45,14 @@ public class WardService(IWardRepository wardRepository) : IWardService
         var skip = (query.PageNumber - 1) * query.PageSize;
         var take = query.PageSize;
         var result = await _wardRepository.Get(skip, take, cancellationToken);
+        return new GetWardsResult(result);
+    }
+    
+    public async Task<GetWardsResult> GetWardsAsync(
+        string query,
+        CancellationToken cancellationToken)
+    {
+        var result = await _wardRepository.Get(query, cancellationToken);
         return new GetWardsResult(result);
     }
 }

@@ -48,6 +48,15 @@ public class WardController(IWardService wardService) : ControllerBase
         return result.MapToResponse();
     }
     
+    [HttpPut("search")]
+    public async Task<GetWardsResponse> GetWards(
+        [FromBody] string request,
+        CancellationToken cancellationToken)
+    {
+        var result = await _wardService.GetWardsAsync(request, cancellationToken);
+        return result.MapToResponse();
+    }
+    
     [HttpPut("{id:long}")]
     public async Task<IActionResult> UpdateWard(
         [FromRoute] long id,
@@ -55,7 +64,7 @@ public class WardController(IWardService wardService) : ControllerBase
         CancellationToken cancellationToken)
     {
         var command = request.MapToModel();
-        var result = await _wardService.AddWardAsync(command, cancellationToken);
+        var result = await _wardService.UpdateWardAsync(id, command, cancellationToken);
         if (result.IsSuccess)
         {
             return Ok(result.Id);

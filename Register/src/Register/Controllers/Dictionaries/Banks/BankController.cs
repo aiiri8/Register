@@ -1,3 +1,5 @@
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Register.Controllers.Dictionaries.Banks;
@@ -6,13 +8,12 @@ namespace Register.Controllers.Dictionaries.Banks;
 [ApiController]
 public class BankController : ControllerBase
 {
-    /*[HttpPost]
-    public async Task<IActionResult> AddWard(
-        [FromBody] AddWardRequest request,
+    [HttpPost]
+    public async Task<IActionResult> AddBank(
+        [FromBody] string name,
         CancellationToken cancellationToken)
     {
-        var command = request.MapToModel();
-        var result = await _wardService.AddWardAsync(command, cancellationToken);
+        var result = await _bankService.AddBankAsync(name, cancellationToken);
         if (result.IsSuccess)
         {
             return Ok(result.Id);
@@ -22,14 +23,14 @@ public class BankController : ControllerBase
     }
     
     [HttpGet("{id:long}")]
-    public async Task<WardResponse> GetWard(
+    public async Task<string> GetBank(
         long id,
         CancellationToken cancellationToken)
     {
-        var result = await _wardService.GetWardAsync(id, cancellationToken);
-        return result.MapToResponse();
+        var result = await _bankService.GetBankAsync(id, cancellationToken);
+        return result;
     }
-
+    
     [HttpPut("")]
     public async Task<GetWardsResponse> GetWards(
         [FromBody] GetWardsRequest request,
@@ -38,5 +39,5 @@ public class BankController : ControllerBase
         var query = request.MapToModel();
         var result = await _wardService.GetWardsAsync(query, cancellationToken);
         return result.MapToResponse();
-    }*/
+    }
 }

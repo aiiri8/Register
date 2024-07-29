@@ -32,7 +32,7 @@ public static class GuardianMapping
             new Bank(bankDto.Id, bankDto.BankName),
             dto.RecipientAccount,
             dto.OpeningDate,
-            new IssuingAuthority(issuingAuthorityDto.Id, issuingAuthorityDto.IssuingAuthorityName),
+            new IssuingAuthority(issuingAuthorityDto.Id, issuingAuthorityDto.IssuingAuthorityName, issuingAuthorityDto.Code),
             dto.IssuingDate,
             dto.BeginningDate,
             dto.EndingDate,

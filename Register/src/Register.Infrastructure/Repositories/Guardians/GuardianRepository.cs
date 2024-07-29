@@ -25,6 +25,38 @@ public class GuardianRepository(ApplicationDbContext applicationDbContext) : IGu
         return result.Entity.Id;
     }
     
+    public async Task<long> Update(
+        long id,
+        AddGuardianQuery command,
+        CancellationToken cancellationToken)
+    {
+        var dto = await applicationDbContext.GuardianDtos.FindAsync(
+            [id],
+            cancellationToken: cancellationToken);
+        var entity = applicationDbContext.GuardianDtos.Update(dto!).Entity;
+        entity.FirstName = command.FirstName;
+        entity.LastName = command.LastName;
+        entity.Patronymic = command.Patronymic;
+        entity.Birthday = command.Birthday.Date;
+        entity.Snils = command.Snils;
+        entity.EndingDate = command.EndingDate;
+        entity.Inn = command.Inn;
+        entity.BeginningDate = command.BeginningDate;
+        entity.DocumentNumber = command.DocumentNumber;
+        entity.DocumentSeries = command.DocumentSeries;
+        entity.RecipientAccount = command.RecipientAccount;
+        entity.PensionStatusId = command.PensionStatusId;
+        entity.IssuingAuthorityId = command.IssuingAuthorityId;
+        entity.DocumentTypeId = command.DocumentTypeId;
+        entity.CalculationMethodId = command.CalculationMethodId;
+        entity.OpeningDate = command.OpeningDate;
+        entity.IssuingDate = command.IssuingDate;
+        entity.TerritoryId = command.TerritoryId;
+        applicationDbContext.SaveChanges();
+
+        return id;
+    }
+    
     public async Task<Guardian> Get(
         long id,
         CancellationToken cancellationToken)
@@ -45,6 +77,21 @@ public class GuardianRepository(ApplicationDbContext applicationDbContext) : IGu
             .OrderByDescending(dto => dto.Id)
             .Skip(skip)
             .Take(take)
+            .ToListAsync(cancellationToken);
+
+        var result = dtos.Select(dto => MapGuardianToModel(dto, cancellationToken).Result).ToImmutableHashSet();
+        return result;
+    }
+    
+    public async Task<ImmutableHashSet<Guardian>> Get(
+        string query,
+        CancellationToken cancellationToken)
+    {
+        var dtos = await applicationDbContext.GuardianDtos
+            .OrderByDescending(dto => dto.Id)
+            .Where(dto => dto.Snils.ToLower().Contains(query.ToLower()) ||
+                          new string($"{dto.LastName} {dto.FirstName} {dto.Patronymic}")
+                              .ToLower().Contains(query.ToLower()))
             .ToListAsync(cancellationToken);
 
         var result = dtos.Select(dto => MapGuardianToModel(dto, cancellationToken).Result).ToImmutableHashSet();

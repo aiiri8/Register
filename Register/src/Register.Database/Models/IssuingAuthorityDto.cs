@@ -10,4 +10,7 @@ public class IssuingAuthorityDto
     
     [Column("issuing_authority_name")]
     public required string IssuingAuthorityName { get; set; }
+    
+    [Column("code")]
+    public required string Code { get; set; }
 }

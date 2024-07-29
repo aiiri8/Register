@@ -35,7 +35,9 @@ public class RelationshipRepository(ApplicationDbContext applicationDbContext) :
         return dto!.MapToModel();
     }
 
-    public async Task<ImmutableHashSet<Relationship>> GetRelationships(long guardianId, CancellationToken cancellationToken)
+    public async Task<ImmutableHashSet<Relationship>> GetRelationships(
+        long guardianId,
+        CancellationToken cancellationToken)
     {
         var dtos = await applicationDbContext.RelationshipDtos
             .OrderByDescending(dto => dto.Id)
@@ -46,7 +48,11 @@ public class RelationshipRepository(ApplicationDbContext applicationDbContext) :
         return result;
     }
 
-    public async Task<long> Update(long id, long daysInMonth, DateTime endingDate, CancellationToken cancellationToken)
+    public async Task<long> Update(
+        long id,
+        long daysInMonth,
+        DateTime endingDate,
+        CancellationToken cancellationToken)
     {
         var dto = await applicationDbContext.RelationshipDtos.FindAsync(
             [id],
@@ -57,5 +63,16 @@ public class RelationshipRepository(ApplicationDbContext applicationDbContext) :
         applicationDbContext.SaveChanges();
 
         return id;
+    }
+    
+    public async Task<ImmutableHashSet<Relationship>> GetActive(CancellationToken cancellationToken)
+    {
+        var dtos = await applicationDbContext.RelationshipDtos
+            .OrderByDescending(dto => dto.Id)
+            .Where(dto => new DateTime(dto.EndingDate.Year, dto.EndingDate.Month, 1) >= new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1))
+            .ToListAsync(cancellationToken);
+
+        var result = dtos.Select(dto => dto.MapToModel()).ToImmutableHashSet();
+        return result;
     }
 }

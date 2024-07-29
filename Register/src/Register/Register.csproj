@@ -14,9 +14,5 @@
       <ProjectReference Include="..\Register.Domain\Register.Domain.csproj" />
       <ProjectReference Include="..\Register.Infrastructure\Register.Infrastructure.csproj" />
     </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="Controllers\Reports\" />
-    </ItemGroup>
 
 </Project>

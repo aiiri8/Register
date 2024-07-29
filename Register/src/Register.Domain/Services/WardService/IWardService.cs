@@ -13,6 +13,11 @@ public interface IWardService
     Task<AddWardResult> AddWardAsync(
         Ward command,
         CancellationToken cancellationToken);
+
+    public Task<AddWardResult> UpdateWardAsync(
+        long id,
+        Ward command,
+        CancellationToken cancellationToken);
     
     public Task<GetWardResult> GetWardAsync(
         long id,
@@ -20,5 +25,9 @@ public interface IWardService
     
     public Task<GetWardsResult> GetWardsAsync(
         GetWardsQuery query,
+        CancellationToken cancellationToken);
+    
+    public Task<GetWardsResult> GetWardsAsync(
+        string query,
         CancellationToken cancellationToken);
 }

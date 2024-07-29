@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Net.Http.Headers;
 using Register.Domain.Services.GuardianService;
 using Register.Domain.Services.RelationshipService;
+using Register.Domain.Services.ReportService;
 using Register.Domain.Services.WardService;
 using Register.Infrastructure.Repositories.Guardians;
 using Register.Infrastructure.Repositories.Relationships;
@@ -35,6 +36,9 @@ builder.Services.AddScoped<IGuardianRepository, GuardianRepository>();
 
 builder.Services.AddScoped<IRelationshipService, RelationshipService>();
 builder.Services.AddScoped<IRelationshipRepository, RelationshipRepository>();
+
+builder.Services.AddScoped<IReportService, ReportService>();
+// builder.Services.AddScoped<IRelationshipRepository, RelationshipRepository>();
 
 var app = builder.Build();
 
