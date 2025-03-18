@@ -74,7 +74,7 @@ public class ReportService(
         Worksheet worksheet = wb.Worksheets[0];
         int rows = worksheet.Cells.MaxDataRow;
         var data = new List<ReportRowGet>();
-        for (int i = 1; i < rows; i++)
+        for (int i = 1; i <= rows; i++)
         {
             var row = new ReportRowGet(
                 worksheet.Cells[i, 0].Value.ToString()!,
@@ -153,8 +153,8 @@ public class ReportService(
                 "Серия",
                 "Номер",
                 "Кем выдан",
-                "Когда выдан",
                 "Код подразделения",
+                "Когда выдан",
                 "Дата начала",
                 "Дата окончания",
                 "Территория",

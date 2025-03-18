@@ -1,0 +1,92 @@
+@page "/Guardians"
+@attribute [StreamRendering]
+
+<PageTitle>Заявители</PageTitle>
+
+<h1>Заявители</h1>
+
+<p>Информация о заявителях</p>
+
+@if (wards == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>Дата рождения</th>
+            <th>СНИЛС</th>
+            <th>Управление</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var ward in wards!)
+        {
+            <tr>
+                <td>@ward.LastName</td>
+                <td>@ward.FirstName</td>
+                <td>@ward.Patronymic</td>
+                <td>@ward.Birthday.Date.ToShortDateString()</td>
+                <td>@ward.Snils</td>
+                <td><a href="/">Изменить</a> | <a href="/Connections"> Льготники</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+    <a href="CreateWard"><button class="btn btn-primary">Добавить заявителя</button></a>
+}
+
+@code {
+    private Ward[]? wards;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(500);
+
+        var ward1 = new Ward()
+        {
+            LastName = "Афанасьев",
+            FirstName = "Анатолий",
+            Patronymic = "Степанович",
+            Birthday = new DateTime(1982, 1, 9),
+            Snils = "6"
+        };
+        
+        var ward2 = new Ward()
+        {
+            LastName = "Афанасьева",
+            FirstName = "Александра",
+            Patronymic = "Артемовна",
+            Birthday = new DateTime(1981, 12, 16),
+            Snils = "7"
+        };
+        
+        var ward3 = new Ward()
+        {
+            LastName = "Сергеев",
+            FirstName = "Сергей",
+            Patronymic = "Сергеевич",
+            Birthday = new DateTime(1975, 5, 5),
+            Snils = "8"
+        };
+        
+        wards = new []{ward1, ward2, ward3};
+    }
+
+    private class Ward
+    {
+        public string? LastName { get; set; }
+        public string? FirstName { get; set; }
+        public string? Patronymic { get; set; }
+        public DateTime Birthday { get; set; }
+        public string? Snils { get; set; }
+    }
+}

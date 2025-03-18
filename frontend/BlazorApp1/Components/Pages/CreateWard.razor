@@ -1,0 +1,99 @@
+@page "/CreateWard"
+<PageTitle>Добавление заявителя</PageTitle>
+
+<h1>Добавление заявителя</h1>
+
+<div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping-model">Фамилия</span>
+    <InputText type="text" class="form-control" placeholder="Иванов" aria-label="model" aria-describedby="addon-wrapping"
+               @bind-Value="@CurrentRequests"/>
+</div>
+
+<div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping-model">Имя</span>
+    <InputText type="text" class="form-control" placeholder="Иван" aria-label="model" aria-describedby="addon-wrapping"
+               @bind-Value="@CurrentRequests"/>
+</div>
+
+<div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping-model">Отчество</span>
+    <InputText type="text" class="form-control" placeholder="Иванович" aria-label="model" aria-describedby="addon-wrapping"
+               @bind-Value="@CurrentRequests"/>
+</div>
+
+<div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping-model">Дата рождения</span>
+    <InputDate class="form-control" placeholder="model" aria-label="model" aria-describedby="addon-wrapping"
+               @bind-Value="@CurrentRequestd"/>
+</div>
+
+<EditForm EditContext="_editContext">
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Пол</label>
+        <InputSelect class="form-select" @bind-Value="CurrentRequest" id="inputGroupSelect01">
+            <option selected>Выберите...</option>
+            <option value="@ElectronicDeviceCategoryViewModel.b">Женский</option>
+            <option value="@ElectronicDeviceCategoryViewModel.a">Мужской</option>
+        </InputSelect>
+    </div>
+</EditForm>
+
+<div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping-model">ИНН</span>
+    <InputText type="text" class="form-control" placeholder="" aria-label="model" aria-describedby="addon-wrapping"
+               @bind-Value="@CurrentRequests"/>
+</div>
+
+<div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping-model">СНИЛС</span>
+    <InputText type="text" class="form-control" placeholder="" aria-label="model" aria-describedby="addon-wrapping"
+               @bind-Value="@CurrentRequests"/>
+</div>
+
+<EditForm EditContext="_editContext">
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Территория</label>
+        <InputSelect class="form-select" @bind-Value="CurrentRequest" id="inputGroupSelect01">
+            <option selected>Выберите...</option>
+            <option value="@ElectronicDeviceCategoryViewModel.a">Нижневартовск</option>
+            <option value="@ElectronicDeviceCategoryViewModel.b">Ханты-Мансийск</option>
+            <option value="@ElectronicDeviceCategoryViewModel.c">Сургут</option>
+            <option value="@ElectronicDeviceCategoryViewModel.d">Излучинск</option>
+            <option value="@ElectronicDeviceCategoryViewModel.e">Мегион</option>
+        </InputSelect>
+    </div>
+</EditForm>
+
+<button class="btn btn-primary">Добавить заявителя</button>
+    <button class="btn btn-primary">Отмена</button>
+
+
+
+@code {
+    
+    private string? CurrentRequests { get; set; }
+    private DateTime? CurrentRequestd { get; set; }
+
+    
+    private ElectronicDeviceCategoryViewModel? CurrentRequest { get; set; }
+    
+    private EditContext? _editContext;
+
+    private List<ElectronicDeviceCategoryViewModel> Requests { get; } = [];
+    
+    protected override void OnInitialized()
+    {
+        CurrentRequest = ElectronicDeviceCategoryViewModel.a;
+        
+        _editContext = new EditContext(CurrentRequest);
+    }
+
+    enum ElectronicDeviceCategoryViewModel
+    {
+        a,
+        b,
+        c,
+        d,
+        e
+    }
+}

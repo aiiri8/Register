@@ -1,0 +1,109 @@
+@page "/Wards"
+@attribute [StreamRendering]
+
+<PageTitle>Льготники</PageTitle>
+
+<h1>Льготники</h1>
+
+<p>Информация о льготниках</p>
+
+@if (wards == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>Дата рождения</th>
+            <th>СНИЛС</th>
+            <th>Управление</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var ward in wards!)
+        {
+            <tr>
+                <td>@ward.LastName</td>
+                <td>@ward.FirstName</td>
+                <td>@ward.Patronymic</td>
+                <td>@ward.Birthday.Date.ToShortDateString()</td>
+                <td>@ward.Snils</td>
+                <td><a href="/">Изменить</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+    <button class="btn btn-primary">Добавить льготника</button>
+}
+
+@code {
+    private Ward[]? wards;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(500);
+
+        var ward1 = new Ward()
+        {
+            LastName = "Иванов",
+            FirstName = "Иван",
+            Patronymic = "Иванович",
+            Birthday = new DateTime(2011, 10, 5),
+            Snils = "1"
+        };
+        
+        var ward2 = new Ward()
+        {
+            LastName = "Иванов",
+            FirstName = "Олег",
+            Patronymic = "Иванович",
+            Birthday = new DateTime(2014, 7, 16),
+            Snils = "2"
+        };
+        
+        var ward3 = new Ward()
+        {
+            LastName = "Иванов",
+            FirstName = "Сергей",
+            Patronymic = "Иванович",
+            Birthday = new DateTime(2008, 4, 30),
+            Snils = "3"
+        };
+        
+        var ward4 = new Ward()
+        {
+            LastName = "Иванова",
+            FirstName = "Евгения",
+            Patronymic = "Ивановна",
+            Birthday = new DateTime(2017, 3, 8),
+            Snils = "4"
+        };
+        
+        var ward5 = new Ward()
+        {
+            LastName = "Иванова",
+            FirstName = "Светлана",
+            Patronymic = "Ивановна",
+            Birthday = new DateTime(2022, 7, 15),
+            Snils = "5"
+        };
+        wards = new []{ward1, ward2, ward3, ward4, ward5};
+    }
+
+    private class Ward
+    {
+        public string? LastName { get; set; }
+        public string? FirstName { get; set; }
+        public string? Patronymic { get; set; }
+        public DateTime Birthday { get; set; }
+        public string? Snils { get; set; }
+    }
+}

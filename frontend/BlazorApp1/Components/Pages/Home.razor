@@ -1,0 +1,54 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Реестр отдельных категорий граждан</h1>
+
+<h5>Данная программа предназначена для формирования отчетности по мерам социальной поддержки.
+    Навигационное меню слева поможет открыть списки заявителей, льготников, справочники и отчеты.
+    Поисковые поля ниже помогут найти заявителей и льготников по ФИО или СНИЛС.</h5>
+
+<br><br>
+    
+<div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping-model">Поиск по заявителям</span>
+    <InputText type="text" class="form-control" placeholder="Введите ФИО или СНИЛС" aria-label="Введите ФИО или СНИЛС" aria-describedby="addon-wrapping"
+               @bind-Value="@CurrentRequests"/>
+    <a href="applicants"><button class="btn btn-primary">Найти</button></a>
+</div>
+
+<div class="input-group flex-nowrap mb-3">
+    <span class="input-group-text" id="addon-wrapping-model">Поиск по льготникам</span>
+    <InputText type="text" class="form-control" placeholder="Введите ФИО или СНИЛС" aria-label="Введите ФИО или СНИЛС" aria-describedby="addon-wrapping"
+               @bind-Value="@CurrentRequests"/>
+        <a href="beneficiaries"><button class="btn btn-primary">Найти</button></a>
+</div>
+
+@code {
+    
+    private string? CurrentRequests { get; set; }
+    private DateTime? CurrentRequestd { get; set; }
+
+    
+    private ElectronicDeviceCategoryViewModel? CurrentRequest { get; set; }
+    
+    private EditContext? _editContext;
+
+    private List<ElectronicDeviceCategoryViewModel> Requests { get; } = [];
+    
+    protected override void OnInitialized()
+    {
+        CurrentRequest = ElectronicDeviceCategoryViewModel.a;
+        
+        _editContext = new EditContext(CurrentRequest);
+    }
+
+    enum ElectronicDeviceCategoryViewModel
+    {
+        a,
+        b,
+        c,
+        d,
+        e
+    }
+}

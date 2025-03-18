@@ -1,0 +1,99 @@
+@page "/Reports"
+@attribute [StreamRendering]
+
+<PageTitle>Отчеты</PageTitle>
+
+<h1>Отчеты</h1>
+
+<p>Каталог отчетов</p>
+
+@if (wards == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Отчет</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var ward in wards!)
+        {
+            <tr>
+                <td><a href="/reports">@ward</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+    <button class="btn btn-primary">Добавить отчет за текущий месяц</button>
+}
+
+@code {
+    private string[]? wards;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(500);
+
+        var ward1 = new Ward()
+        {
+            LastName = "Иванов",
+            FirstName = "Иван",
+            Patronymic = "Иванович",
+            Birthday = new DateTime(2011, 10, 5),
+            Snils = "1"
+        };
+        
+        var ward2 = new Ward()
+        {
+            LastName = "Иванов",
+            FirstName = "Олег",
+            Patronymic = "Иванович",
+            Birthday = new DateTime(2014, 7, 16),
+            Snils = "2"
+        };
+        
+        var ward3 = new Ward()
+        {
+            LastName = "Иванов",
+            FirstName = "Сергей",
+            Patronymic = "Иванович",
+            Birthday = new DateTime(2008, 4, 30),
+            Snils = "3"
+        };
+        
+        var ward4 = new Ward()
+        {
+            LastName = "Иванова",
+            FirstName = "Евгения",
+            Patronymic = "Ивановна",
+            Birthday = new DateTime(2017, 3, 8),
+            Snils = "4"
+        };
+        
+        var ward5 = new Ward()
+        {
+            LastName = "Иванова",
+            FirstName = "Светлана",
+            Patronymic = "Ивановна",
+            Birthday = new DateTime(2022, 7, 15),
+            Snils = "5"
+        };
+        wards = new []{"Отчет за 06-2024", "Отчет за 07-2024", "Отчет за 08-2024", "Отчет за 09-2024"};
+    }
+
+    private class Ward
+    {
+        public string? LastName { get; set; }
+        public string? FirstName { get; set; }
+        public string? Patronymic { get; set; }
+        public DateTime Birthday { get; set; }
+        public string? Snils { get; set; }
+    }
+}

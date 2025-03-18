@@ -73,10 +73,11 @@ public class WardRepository(ApplicationDbContext applicationDbContext) : IWardRe
     {
         var dtos = await applicationDbContext.WardDtos
             .OrderByDescending(dto => dto.Id)
-            .Where(dto => dto.Snils.ToLower().Contains(query.ToLower()) ||
-                          new string($"{dto.LastName} {dto.FirstName} {dto.Patronymic}")
-                              .ToLower().Contains(query.ToLower()))
             .ToListAsync(cancellationToken);
+
+        dtos = dtos.Where(dto => (dto.Snils.ToLower().Contains(query.ToLower()) ||
+                                  new string($"{dto.LastName} {dto.FirstName} {dto.Patronymic}")
+                                      .ToLower().Contains(query.ToLower()))).ToList();
 
         var result = dtos.Select(dto => dto.MapToModel()).ToImmutableHashSet();
         return result;
